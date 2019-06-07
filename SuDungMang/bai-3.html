@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<input type="text" id="tu">
+<button onclick="ChuyenDoi()">chuyển đổi</button>
+<script>
+    function ChuyenDoi() {
+        let TuDoi = document.getElementById("tu").value;
+        let ChuHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let ChuThuong = 'abcdefghijklmnopqrstuvwxyz';
+        let HienThi = [];
+        for (let x = 0; x < TuDoi.length; x++) {
+            if (ChuHoa.indexOf(TuDoi[x]) !== -1) {
+                HienThi.push(TuDoi[x].toLowerCase());
+            } else if (ChuThuong.indexOf(TuDoi[x]) !== -1) {
+                HienThi.push(TuDoi[x].toUpperCase());
+            } else {
+                HienThi.push(TuDoi[x]);
+            }
+        }
+        alert(HienThi.join(''));
+    }
+</script>
+</body>
+</html>
